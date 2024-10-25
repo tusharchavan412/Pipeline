@@ -1,3 +1,4 @@
+
 pipeline{
     agent{
         label {
@@ -10,17 +11,25 @@ pipeline{
             steps{
                 sh '''
             sudo yum install httpd -y
-            sudo systemctl start http
+            sudo systemctl start httpd
             '''
             }
 
         }
          stage("deploy httpd"){
             steps{
+                sh '''
                 sudo chmod -R 777 /var/www/html
                 echo "This is Branch -3 Test web appliation" > /var/www/html/index.html
+                '''
             }
-         }   
+         }            
 
-     }
-  }
+
+        
+           
+            
+    }
+      
+        
+}
