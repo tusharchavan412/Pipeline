@@ -1,3 +1,4 @@
+
 pipeline{
     agent{
         label {
@@ -17,10 +18,18 @@ pipeline{
         }
          stage("deploy httpd"){
             steps{
+                sh '''
                 sudo chmod -R 777 /var/www/html
                 echo "This is Branch -1 Test web appliation" > /var/www/html/index.html
+                '''
             }
-         }   
+         }            
 
-     }
-  }
+
+        
+           
+            
+    }
+      
+        
+}
