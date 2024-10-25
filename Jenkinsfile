@@ -18,7 +18,7 @@ pipeline{
          stage("deploy httpd"){
             steps{
                 sudo chmod -R 777 /var/www/html
-                echo "This is Branch -1 Test web appliation" > /var/www/html/index.html
+                echo "This is Branch -2 Test web appliation" > /var/www/html/index.html
             }
          }   
 
